@@ -1,13 +1,14 @@
 function StringToInteger(value) {
+    const uppercasevalue = value.toUpperCase();
     const defaultvalue = {
         'A': 1, 'B': 5, 'Z': 10, 'L': 50, 'C': 100, 'D': 500, 'R': 1000
     };
 
     let total = 0;
 
-    for (let i = 0; i < value.length; i++) {
-        let current = defaultvalue[value[i]];
-        let next = defaultvalue[value[i + 1]];
+    for (let i = 0; i < uppercasevalue.length; i++) {
+        let current = defaultvalue[uppercasevalue[i]];
+        let next = defaultvalue[uppercasevalue[i + 1]];
 
         if ( current < next) {
             total += next - current; 
@@ -19,13 +20,11 @@ function StringToInteger(value) {
 
     return total;
 }
-
-
-console.log(StringToInteger("AAA"));       // 3
-console.log(StringToInteger("LBAAA"));     // 58
-console.log(StringToInteger("RCRZCAB"));   // 1994
-console.log(StringToInteger("CD"));        // 400 
-console.log(StringToInteger("CR"));        // 900 
-console.log(StringToInteger("ZC"));        // 90 
-console.log(StringToInteger("AZ"));        // 9 
-console.log(StringToInteger("AB"));        // 4
+console.log(StringToInteger("AAA"));       
+console.log(StringToInteger("LBAAA"));     
+console.log(StringToInteger("RCRZCAB"));   
+console.log(StringToInteger("CD"));        
+console.log(StringToInteger("CR"));        
+console.log(StringToInteger("ZC"));        
+console.log(StringToInteger("AZ"));        
+console.log(StringToInteger("AB"));        
